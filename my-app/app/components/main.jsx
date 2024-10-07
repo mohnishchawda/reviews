@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { Button, TextField } from "@radix-ui/themes";
 import { useRouter } from "next/navigation";
@@ -19,7 +19,7 @@ export default function main() {
   return (
     <div>
       <TextField.Root
-        placeholder="Enter the appstore url …"
+        placeholder="Enter the appstore url …" 
         onChange={(e) => setUrl(e.target.value)}
       >
         <TextField.Slot>
