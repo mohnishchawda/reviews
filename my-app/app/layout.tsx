@@ -34,7 +34,7 @@ export default function RootLayout({
         <Theme
           accentColor="gray"
           grayColor="auto"
-          appearance="dark"
+          appearance="light"
           radius="medium"
           scaling="90%"
           panelBackground="translucent"
