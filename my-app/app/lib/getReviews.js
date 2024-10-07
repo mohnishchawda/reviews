@@ -1,11 +1,4 @@
-export const getReviews = async (url) => {
-  const urlObj = new URL(url);
-  const pathParts = urlObj.pathname.split("/");
-
-  const country = pathParts[1];
-  const appName = pathParts[3];
-  const id = pathParts[4].replace("id", "");
-  
+export const getReviews = async (country, id) => {
   return fetch(
     `https://itunes.apple.com/${country}/rss/customerreviews/id=${id}/json`,
     {
@@ -14,5 +7,12 @@ export const getReviews = async (url) => {
       },
       cache: "no-store", // Set cache option here
     }
-  ).then((response) => response.json());
+  )
+    .then((response) => response.json())
+    .then((json_response) => {
+      if (json_response["feed"]["entry"]) {
+        const reviews = json_response["feed"]["entry"];
+        console.log(reviews);
+      }
+    });
 };
