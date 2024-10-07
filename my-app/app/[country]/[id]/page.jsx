@@ -1,6 +1,6 @@
 import React from "react";
 import { getReviews } from "@/app/lib/getReviews";
-import { Table } from "@radix-ui/themes";
+import { Badge, Table } from "@radix-ui/themes";
 
 export default async function Reviews({ params }) {
   const country = `${params.country}`;
@@ -23,7 +23,7 @@ export default async function Reviews({ params }) {
           {reviews.map((item) => (
             <Table.Row key={item.id}>
               <Table.Cell>{item.date}</Table.Cell>
-              <Table.Cell>{item.rating}</Table.Cell>
+              <Table.Cell>{item.rating>=4?<Badge color="cyan">{item.rating}</Badge>:item.rating<=2?<Badge color="crimson">{item.rating}</Badge>:<Badge color="orange">{item.rating}</Badge>}</Table.Cell>
               <Table.Cell>{item.title}</Table.Cell>
               <Table.Cell>{item.content}</Table.Cell>
               <Table.Cell>{item.version}</Table.Cell>
