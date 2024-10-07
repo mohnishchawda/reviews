@@ -27,7 +27,7 @@ export default function main() {
         </TextField.Slot>
       </TextField.Root>
       <Button variant="outline" onClick={handleClick}>
-        Download
+        Get Reviews
       </Button>
     </div>
   );

@@ -1,6 +1,6 @@
 export const getReviews = async (country, id) => {
   return fetch(
-    `https://itunes.apple.com/${country}/rss/customerreviews/id=${id}/json`,
+    `https://itunes.apple.com/${country}/rss/customerreviews/id=${id}/sortby=mostrecent/page=1/json`,
     {
       headers: {
         Accept: "application/json",
@@ -19,7 +19,7 @@ export const getReviews = async (country, id) => {
           item.title = item.title.label;
           item.content = item.content.label;
           item.id = item.id.label;
-          
+
           delete item["im:version"];
           delete item["im:rating"];
           delete item.updated;
