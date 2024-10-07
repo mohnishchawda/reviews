@@ -30,7 +30,7 @@ export const getReviews = async (country, id) => {
           delete item["im:voteCount"];
           return item;
         });
-        console.log(reviews);
+        return reviews;
       }
     });
 };
