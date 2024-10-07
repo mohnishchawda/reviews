@@ -18,12 +18,12 @@ export const getReviews = async (country, id) => {
           item.version = item["im:version"].label;
           item.title = item.title.label;
           item.content = item.content.label;
-
+          item.id = item.id.label;
+          
           delete item["im:version"];
           delete item["im:rating"];
           delete item.updated;
           delete item.author;
-          delete item.id;
           delete item.link;
           delete item["im:contentType"];
           delete item["im:voteSum"];
